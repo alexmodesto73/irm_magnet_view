@@ -1,0 +1,2 @@
+version,device name,recording epoch time,recording time,recording timezone,platform,appVersion,device id,sensors,sampleRateMs,standardisation
+3,Pixel 10 Pro,1763481144916,2025-11-18_15-52-24,Europe/Paris,android,1.49.0,ff1472f7-a5b3-4e48-8302-f51238151772,Magnetometer|Location|Watch Location|Annotation|MagnetometerUncalibrated,10|0|10||10,false
