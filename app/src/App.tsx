@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import Map from './components/Map';
-import Dashboard from './components/Dashboard';
+import EducationalPanel from './components/EducationalPanel';
 import { loadData } from './utils/dataLoader';
 import type { DataPoint } from './utils/dataLoader';
 import './App.css';
+import 'leaflet/dist/leaflet.css';
 
 function App() {
   const [data, setData] = useState<DataPoint[]>([]);
@@ -47,7 +48,7 @@ function App() {
         onViewStateChange={setViewState}
         setHoverInfo={setHoverInfo}
       />
-      <Dashboard data={data} hoverInfo={hoverInfo} />
+      <EducationalPanel hoverInfo={hoverInfo} />
     </div>
   );
 }

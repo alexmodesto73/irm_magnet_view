@@ -7,9 +7,9 @@ export interface DataPoint {
     magnitude: number;
 }
 
-export async function loadData(url: string = '/data.geojson'): Promise<DataPoint[]> {
+export async function loadData(): Promise<DataPoint[]> {
     try {
-        const response = await fetch(url);
+        const response = await fetch('./data.geojson');
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const json = await response.json();
         console.log('GeoJSON loaded:', json);

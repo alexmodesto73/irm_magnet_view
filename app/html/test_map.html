@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map Diagnostic</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; }
+        #map { height: 100%; width: 100%; background: red; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        try {
+            var map = L.map('map').setView([45.546, 5.970], 13);
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; OpenStreetMap &copy; CARTO'
+            }).addTo(map);
+            L.marker([45.546, 5.970]).addTo(map)
+                .bindPopup('If you see this, Leaflet works!')
+                .openPopup();
+            console.log("Map initialized");
+        } catch (e) {
+            document.body.innerHTML += '<h1 style="color:white">Error: ' + e.message + '</h1>';
+            console.error(e);
+        }
+    </script>
+</body>
+</html>
